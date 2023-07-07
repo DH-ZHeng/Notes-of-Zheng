@@ -1,0 +1,91 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Code - Tag - Notes</title>
+        <link>http://example.org/tags/code/</link>
+        <description>Code - Tag - Notes</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>13129114635@163.com (ZHengDH)</managingEditor>
+            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://example.org/tags/code/" rel="self" type="application/rss+xml" /><item>
+    <title>Python Code Tips</title>
+    <link>http://example.org/posts/code/python/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>ZHengDH</author>
+    <guid>http://example.org/posts/code/python/</guid>
+    <description><![CDATA[<h1 id="pandas"><strong>&gt;pandas</strong></h1>
+<pre tabindex="0"><code>    df.sub(a, axis=0)   # 按行减去a这一行
+    df.drop(a, axis=0)  # 删除a这一列
+    df.dropna()         # 删除空值
+    df.cov(ddof=n)      # 求自由度为n的协方差
+    df.sort_values(by=aattribute)   # 按照某个属性的值排序
+    df.set_index()      # 设置索引，可double sorting
+    df.isin(values)     # values:iterable, setries, Dataframe or dict
+    df.swaplevel()      # 交换双重index的位置
+    df.reset_index()    # 重置index, index作为data储存
+    df.fillna(num)      # 用num补充所有的nan
+    df.cumprod()        # 每个位置的value有前面所有balues累乘
+    df.cumsum()         # 累加
+    df.drop_duplicates()    # 删除重复值        
+    df.astype()         # 整张表修改数据格式         
+
+    pd.isnull(df).sum() # 空值统计
+
+    pd.merge(df1, df2, on= )    # 相同索引会归在同一行，按列拼接
+    pd.concat([df1, df2], axis=0)   # 横向拼接
+
+    pd.DatetimeIndex(Growth_Rate.index.get_level_values(1)).year==Year   # 双重index内索引为时间，取出某一年的数据
+</code></pre><h1 id="numpy"><strong>&gt;numpy</strong></h1>
+<pre tabindex="0"><code>    np.ones(n)              # 一维
+    np.ones((n,m))          # 二维
+    np.zeros()
+    np.ones()
+    np.linalg.inv()         # 求逆矩阵
+    np.dot(data1, data2)    # 矩阵相乘
+    df1.dot(df2)
+    np.split(data, [多个拆分位置])   # 拆分数据
+    np.array_split(data, n)         # 将数据平分成为n列
+    np.maximum.accumulate(data)
+    np.maximum.accumulate(date)     # 计算数组（或dataframe特定轴）的累积最大值（用于最大回撤）
+    np.unique(data)         # 找出不重复的值
+    np.argmax(data)         # 返回一个numpy数组中最大值的索引值，多个是返回第一个
+    np.sign(data)           # 取数字符号（正负号）的函数（-1，0，1）
+    np.clip(data, a, b)     # 剪枝，数据范围限制在[a,b]之间
+    np.quantile(data, quantile)     # 取出data的quantile的值
+    np.vstack((array1, array2))     # 纵向堆叠数据
+    np.hstack((array1, array2))     # 水平堆叠数据
+
+    array.tolist()          # array转为list
+    array.cumsum()          # 累加，可用于多维数组
+</code></pre><h1 id="统计方法"><strong>&gt;统计方法</strong></h1>
+<h2 id="回归">回归</h2>
+<pre tabindex="0"><code>    y = 
+    x =
+    x = sm.add_constant(x)
+    model = sm.OLS(y,x)
+    result = model.fit()
+
+    p = scipy.stats.f.sf(n:标的数量， m-n-1:自由度)
+    ststs.ttest_1samp(data,values)  # t_test:data可以是多列，同时values要为对应数量的值，比如检验25列数据是否显著不为0，values应该为25个0的list
+</code></pre><h1 id="数据保存"><strong>&gt;数据保存</strong></h1>
+<h2 id="保存到excel">保存到excel</h2>
+<pre tabindex="0"><code>    savelocal = 
+    writer = pd.ExcelWriter(savelocal)
+    df.to_excel(writer, sheet_name=&#39;&#39;)
+
+    writer.save()
+    writer.close()
+</code></pre><h1 id="多进程"><strong>&gt;多进程</strong></h1>
+<pre tabindex="0"><code>    p = mp.Pool(n):     # n:多进程数量
+    result = []
+    result.append(p.apply_async(function, args=()))
+    
+    for i in result：
+    print(b.get())      # 多进程debug输出
+
+    p.close()
+    p.join()
+</code></pre><h1 id="leetcode"><strong>&gt;Leetcode</strong></h1>
+<pre tabindex="0"><code>    enumerate(x)         # 给x中的元素贴上序号，并返回序号与元素值
+    dict().get()         # 根据index取出值
+</code></pre>]]></description>
+</item>
+</channel>
+</rss>

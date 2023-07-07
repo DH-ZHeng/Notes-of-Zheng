@@ -1,0 +1,121 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Report - Category - Notes</title>
+        <link>http://example.org/categories/report/</link>
+        <description>Report - Category - Notes</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>13129114635@163.com (ZHengDH)</managingEditor>
+            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://example.org/categories/report/" rel="self" type="application/rss+xml" /><item>
+    <title>基于拥挤度判断的行业轮动策略</title>
+    <link>http://example.org/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>ZHengDH</author>
+    <guid>http://example.org/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</guid>
+    <description><![CDATA[<h2 id="基于拥挤度判断的行业轮动策略">基于拥挤度判断的行业轮动策略</h2>
+<ul>
+<li>来源：基于拥挤度判断的行业轮动策略——信达证券</li>
+</ul>
+<h3 id="行业轮动策略动量策略">行业轮动策略（动量策略）</h3>
+<ul>
+<li>
+<p>年度动量效应在行业层面可能有效，捕捉动量效应和规避动量崩溃是决定动量策略表现的关键因素</p>
+</li>
+<li>
+<p>定义各行业的动量因子为过去一段时间的行业累计收益率，有：
+$$
+F_{i,t} = \frac{ClosePrice_{i,t}}{ClosePrice_{i,t-win_len+1}}-1
+$$</p>
+</li>
+<li>
+<p>$F_{i,t}$为第𝑖个行业在𝑡时刻的动量因子</p>
+</li>
+<li>
+<p>𝑖 = 1,2, ⋯ , 𝑁;  𝑡 = 𝑤𝑖𝑛_𝑙𝑒𝑛, ⋯ , 𝑇；</p>
+</li>
+<li>
+<p>𝑁为截面行业个数；𝑇为回测时段总天数；</p>
+</li>
+<li>
+<p>$𝐶𝑙𝑜𝑠𝑒𝑃𝑟𝑖𝑐𝑒_𝑖$,𝑡为第𝑖个行业在𝑡时刻的收盘价</p>
+</li>
+<li>
+<p>𝑤𝑖𝑛_𝑙𝑒𝑛为计算累计收益率时使用的回看窗口的天数</p>
+<p><strong>回看窗口（𝒘𝒊𝒏_𝒍𝒆𝒏）是动量策略的关键参数</strong>
+<strong>60交易日为短期；250交易日为长期</strong></p>
+</li>
+<li>
+<p>中期动量250个交易日为最优</p>
+</li>
+<li>
+<p>数据：28个中信一级行业（不含综合、综合金融）</p>
+</li>
+<li>
+<p>策略：过去250个交易日累计涨幅最高的6个行业为多头组合；过去250个交易日累计涨幅最低的6个行业为空头组合；28个行业等权组合为基准</p>
+</li>
+</ul>
+<h3 id="单行业拥挤度">单行业拥挤度</h3>
+<ul>
+<li>
+<p>规避相对拥挤的市场环境和行业是动量策略回撤控制的重要方向和手段
+<strong>构建资产集中度（Asset Centrality）指标来捕捉一组相似资产的拥挤程度</strong></p>
+</li>
+<li>
+<p>STEP1：主成分分析。将𝑁个行业的收益率时间序列去中心化（去平均值），进行主成分分析，得到𝑁个特征值和𝑁个特征向量。</p>
+</li>
+<li>
+<p>STEP2：计算方差贡献率。将特征值按照从大到小的顺序排序，将其对应的前𝑛个特征向量分别作为列向量组成特征向量矩阵，计算前𝑛个特征向量的方差贡献率𝐴𝑅（Absorption Ratio）。
+$$
+AR = \frac{\sum\limits_{j=1}^{n} {\sigma^2_{Ej}}}{\sum\limits_{i=1}^{N} {\sigma^2_{Aj}}}
+$$
+N:横截面个数
+n:选取的特征向量数
+$\sigma^2_{Ej}$:第j个特征向量方差
+$\sigma^2_{Aj}$:第i个行业方差</p>
+</li>
+<li>
+<p>在𝑛一定的情况下，方差贡献率𝐴𝑅越高，说明各行业走势的共同驱动因素就越强</p>
+</li>
+<li>
+<p>STEP3：计算单个行业𝑖的资产集中度。以前𝑛个𝐴𝑅为加权比例，计算第𝑖个行业分别在𝑛个特征向量暴露的绝对值在所有行业中的占比。行业𝑖的资产集中度指标即作为行业𝑖的拥挤度度量指标，有:
+$$
+C_{i} = \frac{\sum\limits_{j=1}^{n} ({AR^j_i}*\frac{|EV^j_i|}{\sum\limits_{k=1}^{N} {|EV^j_k|}})}{\sum\limits_{j=1}^{n} {AR^j_i}}
+$$
+$C_{i}$:行业𝑖的资产集中度得分;
+$AR^j_i$:第𝑗个特征向量的方差贡献率
+$EV^j_i$:第𝑖个行业在第𝑗个特征向量暴露的绝对值
+n:𝑛为方差贡献率分子中的特征向量数，取2</p>
+</li>
+<li>
+<p>策略</p>
+<ol>
+<li>多头组合：取出28 个中信一级行业（不含综合、综合金融）中过去250 个交易日累计涨幅最高的6 个行业。若6 个行业中不包含当前截面最拥挤行业，则等权买入该6 个行业；否则剔除最拥挤行业后递补涨幅靠前的第7 个行业。</li>
+<li>空头组合：每次调仓时等权买入28 个中信一级行业（不含综合、综合金融）中，过去250 个交易日累计涨幅最低的6 个行业。</li>
+<li>等权组合：每次调仓时等权买入28 个中信一级行业（不含综合、综合金融）。</li>
+<li>多头超额：多头组合相对等权组合的累计超额。</li>
+</ol>
+</li>
+</ul>
+<h3 id="市场拥挤度">市场拥挤度</h3>
+<ul>
+<li>
+<p>单行业拥挤度指标剔除最拥挤行业降低了多头组合的持仓风险</p>
+</li>
+<li>
+<p>使用两个因子度量整个市场的价量拥挤程度：行业拥挤度分散度因子𝑆𝐷𝐶和换手率𝑇𝑢𝑟𝑛𝑂𝑣𝑒𝑟
+<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>行业拥挤度分散度因子𝑆𝐷𝐶：定义𝐶𝑖,𝑡为第𝑖个行业在时刻𝑡的资产集中𝑚𝑒𝑎𝑛($𝐶_𝑖$,𝑡)为𝑡时刻截面所有行业资产集中度的均值，𝑁为截面行业个数。当期行业拥挤度分散度因子$𝑆𝐷𝐶_𝑡$定义为资产集中度$𝐶_𝑖$,𝑡截面标准差的相反数，截面所有行业的拥挤度分化越小，说明当前市场越拥挤。<br>
+$$
+SDC_t = -\sqrt{\frac{1}{N-1}\sum\limits_{i=1}^{N} (C_i-mean(C_{i,t}))^2}
+$$</p>
+</li>
+<li>
+<p>换手率因子𝑇𝑢𝑟𝑛𝑂𝑣𝑒𝑟：万得全A（881001）每日换手率过去60日的移动平均值
+为尽量回避因子在个别时段不平稳的影响，分别对两个因子取过去5 年（1250 个交易日）的分位值。</p>
+</li>
+</ul>
+<p><strong>为兼容𝑆𝐷𝐶和𝑇𝑢𝑟𝑛𝑂𝑣𝑒𝑟两个因子的有效性若两个因子中至少有一个因子分位数上穿95%，模型发出动量失效预警信号，此时多头组合按等权组合的方式配置，多空组合、多头超额收益率均为0</strong></p>
+]]></description>
+</item>
+</channel>
+</rss>
