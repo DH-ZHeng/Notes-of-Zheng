@@ -29,15 +29,6 @@
                     hreflang="zh-cn"
                     href="http://example.org/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://example.org/about/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://example.org/zh-cn/about/"
-                    /></url><url>
             <loc>http://example.org/zh-cn/categories/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
