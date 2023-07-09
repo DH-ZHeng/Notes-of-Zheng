@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>所有文章 - Notes</title>
-        <link>http://example.org/zh-cn/posts/</link>
+        <link>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/</link>
         <description>所有文章 | Notes</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>13129114635@163.com (ZHengDH)</managingEditor>
-            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Black-Scholes 推导</title>
-    <link>http://example.org/zh-cn/posts/finance/black-scholes/</link>
+    <link>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/finance/black-scholes/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>ZHengDH</author>
-    <guid>http://example.org/zh-cn/posts/finance/black-scholes/</guid>
+    <guid>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/finance/black-scholes/</guid>
     <description><![CDATA[<h1 id="正态分布与对数正态分布">正态分布与对数正态分布</h1>
 <h2 id="正态分布">正态分布</h2>
 <h3 id="概率密度函数">概率密度函数</h3>
@@ -299,10 +299,10 @@ $$</p>
 </item>
 <item>
     <title>Python Code Tips</title>
-    <link>http://example.org/zh-cn/posts/code/python/</link>
+    <link>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/code/python/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>ZHengDH</author>
-    <guid>http://example.org/zh-cn/posts/code/python/</guid>
+    <guid>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/code/python/</guid>
     <description><![CDATA[<h1 id="pandas"><strong>&gt;pandas</strong></h1>
 <pre tabindex="0"><code>    df.sub(a, axis=0)   # 按行减去a这一行
     df.drop(a, axis=0)  # 删除a这一列
@@ -382,10 +382,10 @@ $$</p>
 </item>
 <item>
     <title>基于拥挤度判断的行业轮动策略</title>
-    <link>http://example.org/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</link>
+    <link>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>ZHengDH</author>
-    <guid>http://example.org/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</guid>
+    <guid>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</guid>
     <description><![CDATA[<h2 id="基于拥挤度判断的行业轮动策略">基于拥挤度判断的行业轮动策略</h2>
 <ul>
 <li>来源：基于拥挤度判断的行业轮动策略——信达证券</li>

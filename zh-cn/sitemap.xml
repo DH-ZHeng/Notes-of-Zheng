@@ -2,132 +2,132 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/zh-cn/posts/finance/black-scholes/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/finance/black-scholes/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/posts/finance/black-scholes/"
+                        href="https://dh-zheng.github.io/Notes.github.io/posts/finance/black-scholes/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/posts/finance/black-scholes/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/finance/black-scholes/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/posts/code/python/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/code/python/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/posts/code/python/"
+                        href="https://dh-zheng.github.io/Notes.github.io/posts/code/python/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/posts/code/python/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/code/python/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/"
+                        href="https://dh-zheng.github.io/Notes.github.io/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/research-report/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/categories/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/categories/"
+                        href="https://dh-zheng.github.io/Notes.github.io/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/categories/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/tags/code/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/code/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/tags/code/"
+                        href="https://dh-zheng.github.io/Notes.github.io/tags/code/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/tags/code/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/code/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/categories/code/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/code/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/categories/code/"
+                        href="https://dh-zheng.github.io/Notes.github.io/categories/code/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/categories/code/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/code/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/categories/fiance/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/fiance/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/categories/fiance/"
+                        href="https://dh-zheng.github.io/Notes.github.io/categories/fiance/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/categories/fiance/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/fiance/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/tags/formula/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/formula/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/tags/formula/"
+                        href="https://dh-zheng.github.io/Notes.github.io/tags/formula/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/tags/formula/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/formula/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/"
+                        href="https://dh-zheng.github.io/Notes.github.io/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/posts/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/posts/"
+                        href="https://dh-zheng.github.io/Notes.github.io/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/posts/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/posts/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/categories/report/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/report/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/categories/report/"
+                        href="https://dh-zheng.github.io/Notes.github.io/categories/report/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/categories/report/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/report/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/tags/strategy/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/strategy/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/tags/strategy/"
+                        href="https://dh-zheng.github.io/Notes.github.io/tags/strategy/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/tags/strategy/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/strategy/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/tags/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/tags/"
+                        href="https://dh-zheng.github.io/Notes.github.io/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/tags/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/tags/installation/</loc></url><url>
-            <loc>http://example.org/zh-cn/tags/content/</loc></url><url>
-            <loc>http://example.org/zh-cn/tags/configuration/</loc></url><url>
-            <loc>http://example.org/zh-cn/categories/documentation/</loc><xhtml:link
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/installation/</loc></url><url>
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/content/</loc></url><url>
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/tags/configuration/</loc></url><url>
+            <loc>https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/documentation/</loc><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="http://example.org/categories/documentation/"
+                        href="https://dh-zheng.github.io/Notes.github.io/categories/documentation/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
-                    href="http://example.org/zh-cn/categories/documentation/"
+                    href="https://dh-zheng.github.io/Notes.github.io/zh-cn/categories/documentation/"
                     /></url></urlset>

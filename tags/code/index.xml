@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Code - Tag - Notes</title>
-        <link>http://example.org/tags/code/</link>
+        <link>https://dh-zheng.github.io/Notes.github.io/tags/code/</link>
         <description>Code - Tag - Notes</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>13129114635@163.com (ZHengDH)</managingEditor>
-            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="http://example.org/tags/code/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://dh-zheng.github.io/Notes.github.io/tags/code/" rel="self" type="application/rss+xml" /><item>
     <title>Python Code Tips</title>
-    <link>http://example.org/posts/code/python/</link>
+    <link>https://dh-zheng.github.io/Notes.github.io/posts/code/python/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
     <author>ZHengDH</author>
-    <guid>http://example.org/posts/code/python/</guid>
+    <guid>https://dh-zheng.github.io/Notes.github.io/posts/code/python/</guid>
     <description><![CDATA[<h1 id="pandas"><strong>&gt;pandas</strong></h1>
 <pre tabindex="0"><code>    df.sub(a, axis=0)   # 按行减去a这一行
     df.drop(a, axis=0)  # 删除a这一列
