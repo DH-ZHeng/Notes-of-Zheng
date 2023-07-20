@@ -64,6 +64,12 @@
     p = scipy.stats.f.sf(n:标的数量， m-n-1:自由度)
     ststs.ttest_1samp(data,values)  # t_test:data可以是多列，同时values要为对应数量的值，比如检验25列数据是否显著不为0，values应该为25个0的list
 ```
+## 数据分析
+```
+    from pandas_profiling import ProfileReport
+    report = ProfileReport(Info_needed, minimal = True)
+    print(report.to_notebook_iframe())
+```
 
 # **>数据保存**
 ## 保存到excel
@@ -93,4 +99,20 @@
 ```
     enumerate(x)         # 给x中的元素贴上序号，并返回序号与元素值
     dict().get()         # 根据index取出值
+```
+
+# **Git**
+```
+    git init             # 创建标准仓库
+    git config --list    # 显示当前git配置信息
+    git config --system --list     # 显示系统级别git配置信息
+    git config --global user.name "用户名"  # 用户级别设置用户名
+    git congig --global user.email "用户邮箱"   # 用户级别设置邮箱
+    git clone <url>      # 克隆远程仓库到本地
+    git add *            # 添加所有文件到暂存区
+    git commit -m "描述"    # 将暂存区的代码添加到本地仓库
+    git status           # 查看仓库文件的状态
+    git status -s        # 查看简略版信息
+    git push -u origin main # 将远程代码推送到本地
+    git pull             # 将远程代码拉取到本地
 ```

@@ -1,0 +1,351 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Courses - Category - Notes</title>
+        <link>https://dh-zheng.github.io/Notes.github.io/categories/courses/</link>
+        <description>Courses - Category - Notes</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>13129114635@163.com (ZHengDH)</managingEditor>
+            <webMaster>13129114635@163.com (ZHengDH)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://dh-zheng.github.io/Notes.github.io/categories/courses/" rel="self" type="application/rss+xml" /><item>
+    <title>Quantitative Investment analysis</title>
+    <link>https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>ZHengDH</author>
+    <guid>https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/</guid>
+    <description><![CDATA[<h1 id="lec1-mean-variance-portfolio-choice">Lec1 Mean-variance portfolio choice</h1>
+<h2 id="basic-concepts-of-portfolios">Basic concepts of portfolios</h2>
+<ul>
+<li>
+<p>Gross return 
+$$
+R = Gross \enspace return = \frac{amount \enspace recevied}{amount \enspace invested}
+$$</p>
+</li>
+<li>
+<p>Rate of return
+$$
+r = Rate \enspace of \enspace return = \frac{amount \enspace recevied - amount \enspace invested}{amount \enspace invested} = R-1
+$$</p>
+</li>
+<li>
+<p>Amount recevied = net dividend and repurchase received during the investment + terminal asset payoffs</p>
+</li>
+<li>
+<p>Short sales
+You receive X~0~ initially and pay X~1~ + D later, so your initial cost is -X~0~ and the final payoff is -X~1~ - D, and hence your gross return is given by,
+$$
+R = \frac{amount \enspace received}{amount \enspace invested} = \frac{-X_1 - D}{-X_0} = \frac{X_1 + D}{X_0} = r+1
+$$</p>
+</li>
+<li>
+<p>Random payoffs(r)
+In real word, both intermediate cash flows and terminal payoffs are uncertain.</p>
+<p>!!!note   r: discrete random variable <!-- raw HTML omitted -->   n: corresponding probabilities {p~1~, &hellip;, p~n~}, where $\sum _i p_i = 1$ and 0 $\leqslant$ p~i~ $\leqslant$ 1</p>
+<p>mean = $\overline{r}$ = $\sum\limits_{n=1}^{n} r_i p_i$
+variance = $\sigma^2_r$ = $\sum\limits_{n=1}^{n} (r_i - \overline{r})^2 p_i$
+standard deviation = $\sigma_r$ = $\sqrt{\sum\limits_{i=1}^{n} (r_i - \overline{r})^2 p_i}$</p>
+</li>
+<li>
+<p>Continuous payoffs</p>
+<p>!!!note return can be any value in ($-\infty, \infty$) (or (0, $\infty$))</p>
+<p>Cumulative Distribution Function (CDF) of r:
+$$
+F(x) = Pr(r\leqslant x)
+$$</p>
+<p>Probability density function (pdf) of r:
+$$
+f(x) = \lim_{\Delta \to 0} \frac{Prob(x &lt; r \leqslant x+\Delta)}{\Delta} = \lim_{\Delta \to 0} \frac{F(x+\Delta)-F(x)}{\Delta} = \frac{\partial F(t)}{\partial t}|_{t=x}
+$$</p>
+<p>Expectation of r:
+$$
+E[r] = \int^x_{-\infty} t f(t) dt
+$$</p>
+<p>Variance of r:
+$$
+Var[r] = E[(r-E[r])^2] = \int_{-\infty}^{\infty} (t-E[r])^2 f(t)dt
+$$</p>
+</li>
+<li>
+<p>Covarience
+For two discrete random variable r and m, their mutual linear dependence can be characterized by their covariance.</p>
+<p>$$
+Cov(r, m) = E[(r-E[r])(m-E[m])] = E[rm] - E[r]E[m]
+Symmetry: Cov(r, m) = Cov(m, r)
+$$</p>
+<p>If r and u are both discrete rv,
+$$
+Cov(r,m)=\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} {(r_i - \overline{r})(u_j - \overline{u})p_{ij}}
+$$
+where,
+$$
+p_{ij} = Prob(r=r_i \&amp; u=u_j)
+$$</p>
+<p>If r and u are both Continuous rv, we have
+$$
+Cov(r,u) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} (x-E[r])(y-E[m])f(x,y)dxdy
+$$</p>
+<p>where f is the joint probility density function of (r,m).</p>
+</li>
+<li>
+<p>Correlation
+Cov(r~1~, r~2~) = 0, they are said to be uncorrelated and independent.
+$$
+E[r_1, r_2] = \overline{r_1} \enspace \overline{r_2} \longrightarrow Cov(r_1, r_2)
+$$</p>
+<p>The correlation coefficient of a pair of random variavles:
+$$
+\rho_{r_1, r_2} = \frac{Cov(r_1, r_2)}{\sigma_{r_1} \sigma_{r_2}}
+$$
+$$
+|\rho_{r_1, r_2}| \leqslant 1 \longrightarrow |Cov(r_1, r_2)| \leqslant \sigma_{r_1} \sigma_{r_2}
+$$</p>
+</li>
+<li>
+<p>Portfolio
+Weight:</p>
+<p>!!! note   Initial wealth W~0~ <!-- raw HTML omitted -->   W~0i~ in each asset <!-- raw HTML omitted -->   total $\sum_i W_{0i} = W_0$, W~0i~ can be negative</p>
+<p>Define:
+$$
+\sum\limits_{i} w_i = 1
+$$
+In matrix form, $e^{&rsquo;}w =1 $, where e i a n $\times$ 1 column vector of 1.</p>
+<p>$e^{&rsquo;}w =0 $: 0成本组合，long-short组合</p>
+<p>Portfolio return:</p>
+<p>!!!note   R~i~ : the gross return of asset i <!-- raw HTML omitted -->   $R_i W_{0i} = R_{i \omega_i}W_0$</p>
+<p>Gross return of the portfolio is:
+$$
+R_p = \frac{amount \enspace received}{amount \enspace invested} = \frac{\sum_i R_{i \omega_i}W_0}{W_0} = \sum\limits_{i} \omega_i R_i = \omega^{&rsquo;}R
+$$
+Rate of return r is:
+$$
+r_p = R_p -1 = \sum\limits_{i} \omega_i R_i -1 = \sum\limits_{i} \omega_i (R_i -1) = \sum\limits_{i} \omega_i r_i = \omega^{&rsquo;}r
+$$</p>
+</li>
+<li>
+<p>Excess Return and Long-short Portfolio</p>
+<p>!!! note   $R_p = \omega_p^{&rsquo;} R$ <!-- raw HTML omitted -->   $R_q = \omega_q^{&rsquo;} = R$ <!-- raw HTML omitted -->   R~f~ : Risk-free return</p>
+<p>Portfolio p return in excess of risk-free rate: $R_p - R_f = \omega_p^{&rsquo;}R - \omega_p^{&rsquo;}(R_f e)$
+Portfolio p return excess in excess of q: $R_p - R_q = \omega_p^{&rsquo;} R - \omega_q^{&rsquo;}R$
+W~p~ - W~q~ =0 $\longrightarrow$ zero cost stratry</p>
+<p>Denote:
+$$
+\overline{r} =  \left (\begin{array}{cc} \overline{r_1} \ \overline{r_2} \ . \ . \ \overline{r_n} \end{array} \right)
+$$
+The expected rate of return of the portfolio:
+$$
+E[r_p] = E[\sum\limits_{i} w_i r_i] = \sum\limits_{i} w_i E[r_i] = \sum\limits_{i} w_i \overline{r_i} = \omega^{&rsquo;}\overline{r}
+$$
+The variance of the portfolio $\sigma_p^2$:
+$$
+\begin{aligned}
+\sigma_p^2 &amp;= E[(r_p - \overline{r_p})^2]\
+&amp;= E[(\sum\limits_{i} \omega_i r_i - \sum\limits_{i} \omega_i \overline{r_i})^2]\
+&amp;= E[(\omega^{&rsquo;}r - \omega^{&rsquo;}\overline{r})(\omega^{&rsquo;}r - \omega^{&rsquo;} \overline{r})]\
+&amp;= E[\omega^{&rsquo;}(r-\overline{r})(r-\overline{r})^{&rsquo;} \omega]\
+&amp;= \omega^{&rsquo;}E[(r-\overline{r})(r-\overline{r})^{&rsquo;}]\omega \enspace(\omega, a constant vevtor, canbe taken out) \
+&amp;= \omega^{&rsquo;} V \omega, \enspace where \enspace V_{i,j} = \sigma_{ij} 
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>OLS Estimator for Linear Regression</p>
+<p>!!! note   Formula: $Y=X \beta + \epsilon$ <!-- raw HTML omitted -->   OLS estimator: $\hat{\beta}<em>{OLS} = \mathop{\arg\min}</em>{\beta} (Y-X \beta)^{&rsquo;} (Y-X \beta)$</p>
+<p>$$
+Y = \left(
+\begin{matrix}
+y_1 \
+y_2 \
+. \
+. \
+y_n \
+\end{matrix}
+\right) +
+\left(
+\begin{matrix}
+1 &amp; E_{du_1} &amp; E_{xp_1} &amp; I_{Q_1} \
+1 &amp; E_{du_2} &amp; E_{xp_2} &amp; I_{Q_2} \
+. &amp; . &amp; . &amp; . \
+. &amp; . &amp; . &amp; . \
+1 &amp; E_{du_n} &amp; E_{xp_n} &amp; I_{Q_n} \
+\end{matrix}
+\right) +
+\left(
+\begin{matrix}
+\epsilon_1 \
+\epsilon_2 \
+. \
+. \
+\epsilon_n \
+\end{matrix}
+\right)
+$$</p>
+<p>$$
+\min \limits_{\beta} \epsilon^T \epsilon = \sum \epsilon_i^2 = f(\beta) \
+\downarrow \
+\frac{\partial f(\beta)}{\partial \beta} = 0
+$$
+Because:
+$$
+\begin{aligned}
+(Y-X \beta)^T (Y-X \beta) &amp;= (Y^T - \beta^T X^T)(Y - X \beta)\
+&amp;= Y^T - 2Y^T X\beta + \beta^T X^T X \beta
+\end{aligned}
+$$
+So:
+$$
+\frac{\partial f(\beta)}{\partial \beta} = 0 \
+\downarrow \
+0 - 2X^TY + \beta X^T X \hat{\beta} = 0 \Longrightarrow \hat{\beta} = (X^T X)^{-1} X^T Y 
+$$</p>
+</li>
+<li>
+<p>Diversification</p>
+<p>!!! note   If the rate of returns on individual assets are correlated
+$$
+\begin{aligned}
+Var(\tilde{r}<em>p) = \sigma_p^2 &amp;= \sum\limits</em>{i} \sum\limits_{j} \frac{1}{n^2} \sigma_{ij} \
+&amp;= \frac{1}{n^2} { \sum\limits_{i=1}^{n} \sigma_i^2 + \sum\limits_{i\neg j} \sigma_{ij} } \
+&amp;= \frac{1}{n^2} { n\sigma_{Avg}^2 + (n^2 - n)\sigma_{ij}^{Avg}  } \
+&amp;= \frac{1}{n} \underbrace{{ \sigma_{Avg}^2 - \sigma_{ij}^{Avg} } }<em>{if \enspace bounded} + \sigma</em>{ij}^{Avg} \longrightarrow \sigma_{ij}^{Avg}
+\end{aligned}
+$$</p>
+<p>!!!note   The variance of a portfolio with a large number of individual assets is mainly determined by the covariance of the individual assets.</p>
+<p>A rational risk-averse investor likes return and dislike risk. She should choose a portfolio of assets that efficiently balance expected returns and risks.</p>
+</li>
+</ul>
+<h2 id="minimal-variance-analysis">Minimal-variance analysis</h2>
+<h3 id="two-risky-assets">Two risky assets</h3>
+<p>!!! note   Let $\overline{R}_A &lt; \overline{R}_B$ and $\sigma_A^2 &lt; \sigma_B^2$ <!-- raw HTML omitted -->   Form a portfolio p with a proportion $\omega \enspace (1-\omega)$ invested in asset A(B)
+The expected return and standard deviation of the portfolio:
+$$
+\overline{R}_p = \omega \overline{R}_A + (1-\omega)\overline{R}_B = \overline{R}_B - \omega (\overline{R}_B - \overline{R}_A)\
+\sigma_p = [\omega^2 \sigma_A^2 + 2\rho \omega (1-\omega)\sigma_A \sigma_B + (1-\omega)^2 \sigma_B^2]^\frac{1}{2}
+$$
+consider an extreme case $\rho=1, \Longrightarrow =|\omega \sigma_A +(1-\omega_B)|$
+We can solve for:
+$$
+\omega = \frac{\sigma_B \pm \sigma_p}{\sigma_B - \sigma_A} \
+\begin{aligned}
+\overline{R}_p = \overline{R}_B + \omega &amp;= \frac{\sigma_B \pm \sigma_p}{\sigma_B - \sigma_A} (\overline{R}_B-\overline{R}_A) \
+&amp;= \frac{\sigma_B \overline{R}_A-\sigma_A \overline{R}_B}{\sigma_B - \sigma_A} \pm \frac{\overline{R}_B - \overline{R}_A}{\sigma_B - \sigma_A}\sigma_p
+\end{aligned}
+$$</p>
+<!-- raw HTML omitted -->
+<h3 id="multiple-risky-assets">Multiple risky assets</h3>
+<p>!!! note   V is invertible (no redundant assets)
+The Markowitz&rsquo;s mean-variance portfolio proble:
+$$
+\min_{\omega} \frac{1}{2} \omega^{&rsquo;}V \omega \
+st. e^{&rsquo;} \omega = 1\
+\omega^{&rsquo;} \overline{R} = \overline{R}_p
+$$</p>
+<p>Form the Lagrangian:
+$$
+\min_{\omega, \lambda, \gamma} L = \underbrace{\frac{1}{2} \omega^{&rsquo;}V \omega }<em>{\frac{1}{2}存在与否都可以} + \lambda (\overline{R}<em>p - \omega^{&rsquo;} \overline{R}) + \gamma(1-\omega^{&rsquo;}e)
+$$
+FOC w.r.t. $\omega$ and two Lagrange multipliers,
+$ V \omega - \lambda \overline{R} - \gamma e = 0, \Longrightarrow$
+$$
+\omega^{*} = \underbrace{\lambda}</em>{权重1} V^{-1} \overline{R} + \underbrace{\gamma}</em>{权重2} V^{-1} e
+$$</p>
+<p>!!! note   Two fund separation theorem: the MVF is a linear combination of two canonic portfolios: $V^{-1}\overline{R}$ and $V^{-1}e$. An inverstor&rsquo;s risk preference (related to $\lambda$ and $\gamma$) determines the weights on these two funds.</p>
+<p>Solve the Largange multipliers(带入$\omega^{<em>}$):
+$$
+\begin{equation}
+\begin{aligned}
+\overline{R}_p &amp;= \overline{R^{&rsquo;}} \omega^{</em>} = \lambda \overline{R^{&rsquo;}}V^{-1} \overline{R} + \gamma \overline{R^{&rsquo;}} V^{-1}e \
+1 &amp;= e^{&rsquo;} \omega = \lambda e^{&rsquo;}V^{-1} \overline{R} + \gamma e^{&rsquo;}V^{-1} e \tag{9}
+\end{aligned}
+\end{equation}
+$$</p>
+<h3 id="portfolio-math">Portfolio math</h3>
+<p>Write the preceding linear equations (9) in a matrix form:
+$$
+\left(
+\begin{matrix}
+\overline{R^{&rsquo;}}V^{-1} \overline{R} &amp; \overline{R^{&rsquo;}}V^{-1}e \
+\overline{R^{&rsquo;}}V^{-1}e &amp; e^{-1}V^{-1}e 
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+\lambda \
+\gamma
+\end{matrix}
+\right) = 
+\left(
+\begin{matrix}
+\overline{R}_p \
+1
+\end{matrix}
+\right)
+$$
+Solve the two Lagrange multipliers:
+$$
+\lambda = \frac{\delta \overline{R}_p - \alpha}{\Delta} \enspace and \enspace \gamma = \frac{\xi - \alpha \overline{R}_p}{\Delta} \tag{10}
+$$
+Where $\alpha, \delta, \xi$ and $\Delta$ are functions of V and $\overline{R}_p$:
+$$
+\begin{equation}
+\begin{aligned}
+\delta \equiv e^{&rsquo;} V ^{-1} e &gt; 0, \
+\alpha \equiv \overline{R}^{&rsquo;} V^{-1}e, \
+\xi = \overline{R}^{&rsquo;}V^{-1}\overline{R} &gt; 0, \
+\Delta = \delta \xi - \alpha^2 \tag{11}
+\end{aligned}
+\end{equation}
+$$
+The optimal portfolio weights $\omega^{<em>}$ :
+$$
+\begin{aligned}
+\omega^{</em>} &amp;= \frac{\delta \overline{R}_p - \alpha}{\Delta} V^{-1} \overline{R} + \frac{\xi - \alpha \overline{R}_p}{\Delta} V^{-1}e \
+&amp;= \alpha + b \overline{R}_p
+\end{aligned}
+$$</p>
+<p>!!!   只有在有效前沿上的投资组合的权重才可以用上述表达式
+Where
+$$
+\alpha \equiv \frac{\xi V^{-1}e - \alpha V^{-1} \overline{R}}{\Delta} \enspace and \enspace b \equiv \frac{\delta V^{-1}\overline{R} - \alpha V^{-1}e}{\Delta}
+$$</p>
+<p>!!!   $\alpha$ and b are fixted vectors, given the investment opportunity set($\overline{R}, V$)</p>
+<p>The variance of frontier portfolio with the expected return $\overline{R}<em>p$ :
+$$
+\sigma_p^2 = \omega^{&rsquo;<em>}V \omega^{</em>} = \omega^{&rsquo;*}(\lambda \overline{R}+\gamma e)=\lambda \overline{R}<em>p + \gamma
+$$
+Substituting the expression of $\lambda$ and $\gamma$:
+We have
+$$
+\sigma_p^2 = \frac{1}{\delta}+ \frac{\delta(\overline{R}<em>p -\frac{\alpha}{\delta})^2}{\Delta} \tag{13}
+$$
+The global minimal variance portfolio (GMV): $\sigma</em>{mv}^2=\frac{1}{\delta}$ with $\overline{R}</em>{mv} = \frac{\alpha}{\delta}$.
+$$
+\omega_mv = \alpha + b \overline{R}</em>{mv} = \frac{V^{-1}e}{\delta} = \frac{V^{-1}e}{e^{&rsquo;}V^{-1}e}
+$$
+$\frac{\partial \sigma_p^2}{\partial \overline{R}<em>p} |</em>{\overline{R}<em>{mv}}=0$ (cannot reduce variance by giving up higher expected returns!)
+<!-- raw HTML omitted -->
+Find the weight on the GMV portfolio in another way:
+$$
+\min</em>{\omega} \frac{1}{2} \omega^{&rsquo;}V\omega \
+\enspace \
+st. \enspace  e^{&rsquo;} \omega = 1
+$$
+FOC w.r.t $\omega$ and the Largrange multiplier, we have
+$$
+\omega = \gamma V^{-1} e = \frac{V^{-1}e}{e^{&rsquo;}V^{-1}e}
+$$</p>
+<h3 id="mvf-geometry">MVF geometry</h3>
+<p>A parabola in ($\overline{R}_p, \sigma_p^2$)
+$$
+\sigma_p^2 = \frac{1}{\delta}+ \frac{\delta(\overline{R}_p -\frac{\alpha}{\delta})^2}{\Delta}
+$$</p>
+<!-- raw HTML omitted -->
+<p>!!!   The global minimum ($\frac{\alpha}{\delta}, \frac{1}{\delta}$) in ($\overline{R}_p, \sigma_p^2$)</p>
+<p>$$
+\frac{\sigma_p^2}{\frac{1}{\delta}}-\frac{\overline{R}_p-\frac{\alpha}{\delta}}{\frac{\Delta}{\delta^2}}=1, \sigma_p &gt; 0
+$$</p>
+<!-- raw HTML omitted -->
+<p>The asymptote: $\lim_{\sigma_p \rightarrow \infty}\frac{d  \overline{R}_p}{d \sigma_p}$</p>
+<p>!!! note   Definition: The frontier portfolios with expected return higher(lower) than $\overline{R}_{mv}=\frac{\alpha}{\delta} $ are called efficient(inefficient) frontier portfolios.</p>
+<h3 id="two-fund-theorem">Two Fund Theorem</h3>
+]]></description>
+</item>
+</channel>
+</rss>

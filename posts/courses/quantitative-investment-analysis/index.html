@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Quantitative Investment analysis - Notes</title><meta name="Description" content="What I have learned in SUSTech"><meta property="og:title" content="Quantitative Investment analysis" />
+<meta property="og:description" content="Lec1 Mean-variance portfolio choice Basic concepts of portfolios Gross return $$ R = Gross \enspace return = \frac{amount \enspace recevied}{amount \enspace invested} $$
+Rate of return $$ r = Rate \enspace of \enspace return = \frac{amount \enspace recevied - amount \enspace invested}{amount \enspace invested} = R-1 $$
+Amount recevied = net dividend and repurchase received during the investment &#43; terminal asset payoffs
+Short sales You receive X~0~ initially and pay X~1~ &#43; D later, so your initial cost is -X~0~ and the final payoff is -X~1~ - D, and hence your gross return is given by, $$ R = \frac{amount \enspace received}{amount \enspace invested} = \frac{-X_1 - D}{-X_0} = \frac{X_1 &#43; D}{X_0} = r&#43;1 $$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" /><meta property="og:image" content="https://dh-zheng.github.io/Notes.github.io/"/><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="ZHeng&#39;s Notes" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dh-zheng.github.io/Notes.github.io/"/>
+
+<meta name="twitter:title" content="Quantitative Investment analysis"/>
+<meta name="twitter:description" content="Lec1 Mean-variance portfolio choice Basic concepts of portfolios Gross return $$ R = Gross \enspace return = \frac{amount \enspace recevied}{amount \enspace invested} $$
+Rate of return $$ r = Rate \enspace of \enspace return = \frac{amount \enspace recevied - amount \enspace invested}{amount \enspace invested} = R-1 $$
+Amount recevied = net dividend and repurchase received during the investment &#43; terminal asset payoffs
+Short sales You receive X~0~ initially and pay X~1~ &#43; D later, so your initial cost is -X~0~ and the final payoff is -X~1~ - D, and hence your gross return is given by, $$ R = \frac{amount \enspace received}{amount \enspace invested} = \frac{-X_1 - D}{-X_0} = \frac{X_1 &#43; D}{X_0} = r&#43;1 $$"/>
+<meta name="application-name" content="ZHengDH&#39;s Notes">
+<meta name="apple-mobile-web-app-title" content="ZHengDH&#39;s Notes"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" /><link rel="stylesheet" href="/Notes.github.io/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Quantitative Investment analysis",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dh-zheng.github.io\/Notes.github.io\/posts\/courses\/quantitative-investment-analysis\/"
+        },"genre": "posts","keywords": "Quantitative","wordcount":  1567 ,
+        "url": "https:\/\/dh-zheng.github.io\/Notes.github.io\/posts\/courses\/quantitative-investment-analysis\/","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ZHengDH"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="normal" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/Notes.github.io/" title="Notes"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/Notes.github.io/categories/"> Categories </a><a class="menu-item" href="/Notes.github.io/tags/"> Tags </a><a class="menu-item" href="https://github.com/" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/Notes.github.io/posts/courses/quantitative-investment-analysis/" selected>English</option><option value="/Notes.github.io/zh-cn/posts/courses/quantitative-investment-analysis/">简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/Notes.github.io/" title="Notes"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/Notes.github.io/categories/" title="">Categories</a><a class="menu-item" href="/Notes.github.io/tags/" title="">Tags</a><a class="menu-item" href="https://github.com/" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/Notes.github.io/posts/courses/quantitative-investment-analysis/" selected>English</option><option value="/Notes.github.io/zh-cn/posts/courses/quantitative-investment-analysis/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: {
+                equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            }
+        }
+    });
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+              {left: "$$", right: "$$", display: true},
+              {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Quantitative Investment analysis</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/Notes.github.io/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>ZHengDH</a></span>&nbsp;<span class="post-category">included in <a href="/Notes.github.io/categories/courses/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Courses</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1567 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-concepts-of-portfolios">Basic concepts of portfolios</a></li>
+    <li><a href="#minimal-variance-analysis">Minimal-variance analysis</a>
+      <ul>
+        <li><a href="#two-risky-assets">Two risky assets</a></li>
+        <li><a href="#multiple-risky-assets">Multiple risky assets</a></li>
+        <li><a href="#portfolio-math">Portfolio math</a></li>
+        <li><a href="#mvf-geometry">MVF geometry</a></li>
+        <li><a href="#two-fund-theorem">Two Fund Theorem</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="lec1-mean-variance-portfolio-choice">Lec1 Mean-variance portfolio choice</h1>
+<h2 id="basic-concepts-of-portfolios">Basic concepts of portfolios</h2>
+<ul>
+<li>
+<p>Gross return 
+$$
+R = Gross \enspace return = \frac{amount \enspace recevied}{amount \enspace invested}
+$$</p>
+</li>
+<li>
+<p>Rate of return
+$$
+r = Rate \enspace of \enspace return = \frac{amount \enspace recevied - amount \enspace invested}{amount \enspace invested} = R-1
+$$</p>
+</li>
+<li>
+<p>Amount recevied = net dividend and repurchase received during the investment + terminal asset payoffs</p>
+</li>
+<li>
+<p>Short sales
+You receive X~0~ initially and pay X~1~ + D later, so your initial cost is -X~0~ and the final payoff is -X~1~ - D, and hence your gross return is given by,
+$$
+R = \frac{amount \enspace received}{amount \enspace invested} = \frac{-X_1 - D}{-X_0} = \frac{X_1 + D}{X_0} = r+1
+$$</p>
+</li>
+<li>
+<p>Random payoffs(r)
+In real word, both intermediate cash flows and terminal payoffs are uncertain.</p>
+<p>!!!note   r: discrete random variable <!-- raw HTML omitted -->   n: corresponding probabilities {p~1~, &hellip;, p~n~}, where $\sum _i p_i = 1$ and 0 $\leqslant$ p~i~ $\leqslant$ 1</p>
+<p>mean = $\overline{r}$ = $\sum\limits_{n=1}^{n} r_i p_i$
+variance = $\sigma^2_r$ = $\sum\limits_{n=1}^{n} (r_i - \overline{r})^2 p_i$
+standard deviation = $\sigma_r$ = $\sqrt{\sum\limits_{i=1}^{n} (r_i - \overline{r})^2 p_i}$</p>
+</li>
+<li>
+<p>Continuous payoffs</p>
+<p>!!!note return can be any value in ($-\infty, \infty$) (or (0, $\infty$))</p>
+<p>Cumulative Distribution Function (CDF) of r:
+$$
+F(x) = Pr(r\leqslant x)
+$$</p>
+<p>Probability density function (pdf) of r:
+$$
+f(x) = \lim_{\Delta \to 0} \frac{Prob(x &lt; r \leqslant x+\Delta)}{\Delta} = \lim_{\Delta \to 0} \frac{F(x+\Delta)-F(x)}{\Delta} = \frac{\partial F(t)}{\partial t}|_{t=x}
+$$</p>
+<p>Expectation of r:
+$$
+E[r] = \int^x_{-\infty} t f(t) dt
+$$</p>
+<p>Variance of r:
+$$
+Var[r] = E[(r-E[r])^2] = \int_{-\infty}^{\infty} (t-E[r])^2 f(t)dt
+$$</p>
+</li>
+<li>
+<p>Covarience
+For two discrete random variable r and m, their mutual linear dependence can be characterized by their covariance.</p>
+<p>$$
+Cov(r, m) = E[(r-E[r])(m-E[m])] = E[rm] - E[r]E[m]
+Symmetry: Cov(r, m) = Cov(m, r)
+$$</p>
+<p>If r and u are both discrete rv,
+$$
+Cov(r,m)=\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} {(r_i - \overline{r})(u_j - \overline{u})p_{ij}}
+$$
+where,
+$$
+p_{ij} = Prob(r=r_i \&amp; u=u_j)
+$$</p>
+<p>If r and u are both Continuous rv, we have
+$$
+Cov(r,u) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} (x-E[r])(y-E[m])f(x,y)dxdy
+$$</p>
+<p>where f is the joint probility density function of (r,m).</p>
+</li>
+<li>
+<p>Correlation
+Cov(r~1~, r~2~) = 0, they are said to be uncorrelated and independent.
+$$
+E[r_1, r_2] = \overline{r_1} \enspace \overline{r_2} \longrightarrow Cov(r_1, r_2)
+$$</p>
+<p>The correlation coefficient of a pair of random variavles:
+$$
+\rho_{r_1, r_2} = \frac{Cov(r_1, r_2)}{\sigma_{r_1} \sigma_{r_2}}
+$$
+$$
+|\rho_{r_1, r_2}| \leqslant 1 \longrightarrow |Cov(r_1, r_2)| \leqslant \sigma_{r_1} \sigma_{r_2}
+$$</p>
+</li>
+<li>
+<p>Portfolio
+Weight:</p>
+<p>!!! note   Initial wealth W~0~ <!-- raw HTML omitted -->   W~0i~ in each asset <!-- raw HTML omitted -->   total $\sum_i W_{0i} = W_0$, W~0i~ can be negative</p>
+<p>Define:
+$$
+\sum\limits_{i} w_i = 1
+$$
+In matrix form, $e^{&rsquo;}w =1 $, where e i a n $\times$ 1 column vector of 1.</p>
+<p>$e^{&rsquo;}w =0 $: 0成本组合，long-short组合</p>
+<p>Portfolio return:</p>
+<p>!!!note   R~i~ : the gross return of asset i <!-- raw HTML omitted -->   $R_i W_{0i} = R_{i \omega_i}W_0$</p>
+<p>Gross return of the portfolio is:
+$$
+R_p = \frac{amount \enspace received}{amount \enspace invested} = \frac{\sum_i R_{i \omega_i}W_0}{W_0} = \sum\limits_{i} \omega_i R_i = \omega^{&rsquo;}R
+$$
+Rate of return r is:
+$$
+r_p = R_p -1 = \sum\limits_{i} \omega_i R_i -1 = \sum\limits_{i} \omega_i (R_i -1) = \sum\limits_{i} \omega_i r_i = \omega^{&rsquo;}r
+$$</p>
+</li>
+<li>
+<p>Excess Return and Long-short Portfolio</p>
+<p>!!! note   $R_p = \omega_p^{&rsquo;} R$ <!-- raw HTML omitted -->   $R_q = \omega_q^{&rsquo;} = R$ <!-- raw HTML omitted -->   R~f~ : Risk-free return</p>
+<p>Portfolio p return in excess of risk-free rate: $R_p - R_f = \omega_p^{&rsquo;}R - \omega_p^{&rsquo;}(R_f e)$
+Portfolio p return excess in excess of q: $R_p - R_q = \omega_p^{&rsquo;} R - \omega_q^{&rsquo;}R$
+W~p~ - W~q~ =0 $\longrightarrow$ zero cost stratry</p>
+<p>Denote:
+$$
+\overline{r} =  \left (\begin{array}{cc} \overline{r_1} \ \overline{r_2} \ . \ . \ \overline{r_n} \end{array} \right)
+$$
+The expected rate of return of the portfolio:
+$$
+E[r_p] = E[\sum\limits_{i} w_i r_i] = \sum\limits_{i} w_i E[r_i] = \sum\limits_{i} w_i \overline{r_i} = \omega^{&rsquo;}\overline{r}
+$$
+The variance of the portfolio $\sigma_p^2$:
+$$
+\begin{aligned}
+\sigma_p^2 &amp;= E[(r_p - \overline{r_p})^2]\
+&amp;= E[(\sum\limits_{i} \omega_i r_i - \sum\limits_{i} \omega_i \overline{r_i})^2]\
+&amp;= E[(\omega^{&rsquo;}r - \omega^{&rsquo;}\overline{r})(\omega^{&rsquo;}r - \omega^{&rsquo;} \overline{r})]\
+&amp;= E[\omega^{&rsquo;}(r-\overline{r})(r-\overline{r})^{&rsquo;} \omega]\
+&amp;= \omega^{&rsquo;}E[(r-\overline{r})(r-\overline{r})^{&rsquo;}]\omega \enspace(\omega, a constant vevtor, canbe taken out) \
+&amp;= \omega^{&rsquo;} V \omega, \enspace where \enspace V_{i,j} = \sigma_{ij} 
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>OLS Estimator for Linear Regression</p>
+<p>!!! note   Formula: $Y=X \beta + \epsilon$ <!-- raw HTML omitted -->   OLS estimator: $\hat{\beta}<em>{OLS} = \mathop{\arg\min}</em>{\beta} (Y-X \beta)^{&rsquo;} (Y-X \beta)$</p>
+<p>$$
+Y = \left(
+\begin{matrix}
+y_1 \
+y_2 \
+. \
+. \
+y_n \
+\end{matrix}
+\right) +
+\left(
+\begin{matrix}
+1 &amp; E_{du_1} &amp; E_{xp_1} &amp; I_{Q_1} \
+1 &amp; E_{du_2} &amp; E_{xp_2} &amp; I_{Q_2} \
+. &amp; . &amp; . &amp; . \
+. &amp; . &amp; . &amp; . \
+1 &amp; E_{du_n} &amp; E_{xp_n} &amp; I_{Q_n} \
+\end{matrix}
+\right) +
+\left(
+\begin{matrix}
+\epsilon_1 \
+\epsilon_2 \
+. \
+. \
+\epsilon_n \
+\end{matrix}
+\right)
+$$</p>
+<p>$$
+\min \limits_{\beta} \epsilon^T \epsilon = \sum \epsilon_i^2 = f(\beta) \
+\downarrow \
+\frac{\partial f(\beta)}{\partial \beta} = 0
+$$
+Because:
+$$
+\begin{aligned}
+(Y-X \beta)^T (Y-X \beta) &amp;= (Y^T - \beta^T X^T)(Y - X \beta)\
+&amp;= Y^T - 2Y^T X\beta + \beta^T X^T X \beta
+\end{aligned}
+$$
+So:
+$$
+\frac{\partial f(\beta)}{\partial \beta} = 0 \
+\downarrow \
+0 - 2X^TY + \beta X^T X \hat{\beta} = 0 \Longrightarrow \hat{\beta} = (X^T X)^{-1} X^T Y 
+$$</p>
+</li>
+<li>
+<p>Diversification</p>
+<p>!!! note   If the rate of returns on individual assets are correlated
+$$
+\begin{aligned}
+Var(\tilde{r}<em>p) = \sigma_p^2 &amp;= \sum\limits</em>{i} \sum\limits_{j} \frac{1}{n^2} \sigma_{ij} \
+&amp;= \frac{1}{n^2} { \sum\limits_{i=1}^{n} \sigma_i^2 + \sum\limits_{i\neg j} \sigma_{ij} } \
+&amp;= \frac{1}{n^2} { n\sigma_{Avg}^2 + (n^2 - n)\sigma_{ij}^{Avg}  } \
+&amp;= \frac{1}{n} \underbrace{{ \sigma_{Avg}^2 - \sigma_{ij}^{Avg} } }<em>{if \enspace bounded} + \sigma</em>{ij}^{Avg} \longrightarrow \sigma_{ij}^{Avg}
+\end{aligned}
+$$</p>
+<p>!!!note   The variance of a portfolio with a large number of individual assets is mainly determined by the covariance of the individual assets.</p>
+<p>A rational risk-averse investor likes return and dislike risk. She should choose a portfolio of assets that efficiently balance expected returns and risks.</p>
+</li>
+</ul>
+<h2 id="minimal-variance-analysis">Minimal-variance analysis</h2>
+<h3 id="two-risky-assets">Two risky assets</h3>
+<p>!!! note   Let $\overline{R}_A &lt; \overline{R}_B$ and $\sigma_A^2 &lt; \sigma_B^2$ <!-- raw HTML omitted -->   Form a portfolio p with a proportion $\omega \enspace (1-\omega)$ invested in asset A(B)
+The expected return and standard deviation of the portfolio:
+$$
+\overline{R}_p = \omega \overline{R}_A + (1-\omega)\overline{R}_B = \overline{R}_B - \omega (\overline{R}_B - \overline{R}_A)\
+\sigma_p = [\omega^2 \sigma_A^2 + 2\rho \omega (1-\omega)\sigma_A \sigma_B + (1-\omega)^2 \sigma_B^2]^\frac{1}{2}
+$$
+consider an extreme case $\rho=1, \Longrightarrow =|\omega \sigma_A +(1-\omega_B)|$
+We can solve for:
+$$
+\omega = \frac{\sigma_B \pm \sigma_p}{\sigma_B - \sigma_A} \
+\begin{aligned}
+\overline{R}_p = \overline{R}_B + \omega &amp;= \frac{\sigma_B \pm \sigma_p}{\sigma_B - \sigma_A} (\overline{R}_B-\overline{R}_A) \
+&amp;= \frac{\sigma_B \overline{R}_A-\sigma_A \overline{R}_B}{\sigma_B - \sigma_A} \pm \frac{\overline{R}_B - \overline{R}_A}{\sigma_B - \sigma_A}\sigma_p
+\end{aligned}
+$$</p>
+<!-- raw HTML omitted -->
+<h3 id="multiple-risky-assets">Multiple risky assets</h3>
+<p>!!! note   V is invertible (no redundant assets)
+The Markowitz&rsquo;s mean-variance portfolio proble:
+$$
+\min_{\omega} \frac{1}{2} \omega^{&rsquo;}V \omega \
+st. e^{&rsquo;} \omega = 1\
+\omega^{&rsquo;} \overline{R} = \overline{R}_p
+$$</p>
+<p>Form the Lagrangian:
+$$
+\min_{\omega, \lambda, \gamma} L = \underbrace{\frac{1}{2} \omega^{&rsquo;}V \omega }<em>{\frac{1}{2}存在与否都可以} + \lambda (\overline{R}<em>p - \omega^{&rsquo;} \overline{R}) + \gamma(1-\omega^{&rsquo;}e)
+$$
+FOC w.r.t. $\omega$ and two Lagrange multipliers,
+$ V \omega - \lambda \overline{R} - \gamma e = 0, \Longrightarrow$
+$$
+\omega^{*} = \underbrace{\lambda}</em>{权重1} V^{-1} \overline{R} + \underbrace{\gamma}</em>{权重2} V^{-1} e
+$$</p>
+<p>!!! note   Two fund separation theorem: the MVF is a linear combination of two canonic portfolios: $V^{-1}\overline{R}$ and $V^{-1}e$. An inverstor&rsquo;s risk preference (related to $\lambda$ and $\gamma$) determines the weights on these two funds.</p>
+<p>Solve the Largange multipliers(带入$\omega^{<em>}$):
+$$
+\begin{equation}
+\begin{aligned}
+\overline{R}_p &amp;= \overline{R^{&rsquo;}} \omega^{</em>} = \lambda \overline{R^{&rsquo;}}V^{-1} \overline{R} + \gamma \overline{R^{&rsquo;}} V^{-1}e \
+1 &amp;= e^{&rsquo;} \omega = \lambda e^{&rsquo;}V^{-1} \overline{R} + \gamma e^{&rsquo;}V^{-1} e \tag{9}
+\end{aligned}
+\end{equation}
+$$</p>
+<h3 id="portfolio-math">Portfolio math</h3>
+<p>Write the preceding linear equations (9) in a matrix form:
+$$
+\left(
+\begin{matrix}
+\overline{R^{&rsquo;}}V^{-1} \overline{R} &amp; \overline{R^{&rsquo;}}V^{-1}e \
+\overline{R^{&rsquo;}}V^{-1}e &amp; e^{-1}V^{-1}e 
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+\lambda \
+\gamma
+\end{matrix}
+\right) = 
+\left(
+\begin{matrix}
+\overline{R}_p \
+1
+\end{matrix}
+\right)
+$$
+Solve the two Lagrange multipliers:
+$$
+\lambda = \frac{\delta \overline{R}_p - \alpha}{\Delta} \enspace and \enspace \gamma = \frac{\xi - \alpha \overline{R}_p}{\Delta} \tag{10}
+$$
+Where $\alpha, \delta, \xi$ and $\Delta$ are functions of V and $\overline{R}_p$:
+$$
+\begin{equation}
+\begin{aligned}
+\delta \equiv e^{&rsquo;} V ^{-1} e &gt; 0, \
+\alpha \equiv \overline{R}^{&rsquo;} V^{-1}e, \
+\xi = \overline{R}^{&rsquo;}V^{-1}\overline{R} &gt; 0, \
+\Delta = \delta \xi - \alpha^2 \tag{11}
+\end{aligned}
+\end{equation}
+$$
+The optimal portfolio weights $\omega^{<em>}$ :
+$$
+\begin{aligned}
+\omega^{</em>} &amp;= \frac{\delta \overline{R}_p - \alpha}{\Delta} V^{-1} \overline{R} + \frac{\xi - \alpha \overline{R}_p}{\Delta} V^{-1}e \
+&amp;= \alpha + b \overline{R}_p
+\end{aligned}
+$$</p>
+<p>!!!   只有在有效前沿上的投资组合的权重才可以用上述表达式
+Where
+$$
+\alpha \equiv \frac{\xi V^{-1}e - \alpha V^{-1} \overline{R}}{\Delta} \enspace and \enspace b \equiv \frac{\delta V^{-1}\overline{R} - \alpha V^{-1}e}{\Delta}
+$$</p>
+<p>!!!   $\alpha$ and b are fixted vectors, given the investment opportunity set($\overline{R}, V$)</p>
+<p>The variance of frontier portfolio with the expected return $\overline{R}<em>p$ :
+$$
+\sigma_p^2 = \omega^{&rsquo;<em>}V \omega^{</em>} = \omega^{&rsquo;*}(\lambda \overline{R}+\gamma e)=\lambda \overline{R}<em>p + \gamma
+$$
+Substituting the expression of $\lambda$ and $\gamma$:
+We have
+$$
+\sigma_p^2 = \frac{1}{\delta}+ \frac{\delta(\overline{R}<em>p -\frac{\alpha}{\delta})^2}{\Delta} \tag{13}
+$$
+The global minimal variance portfolio (GMV): $\sigma</em>{mv}^2=\frac{1}{\delta}$ with $\overline{R}</em>{mv} = \frac{\alpha}{\delta}$.
+$$
+\omega_mv = \alpha + b \overline{R}</em>{mv} = \frac{V^{-1}e}{\delta} = \frac{V^{-1}e}{e^{&rsquo;}V^{-1}e}
+$$
+$\frac{\partial \sigma_p^2}{\partial \overline{R}<em>p} |</em>{\overline{R}<em>{mv}}=0$ (cannot reduce variance by giving up higher expected returns!)
+<!-- raw HTML omitted -->
+Find the weight on the GMV portfolio in another way:
+$$
+\min</em>{\omega} \frac{1}{2} \omega^{&rsquo;}V\omega \
+\enspace \
+st. \enspace  e^{&rsquo;} \omega = 1
+$$
+FOC w.r.t $\omega$ and the Largrange multiplier, we have
+$$
+\omega = \gamma V^{-1} e = \frac{V^{-1}e}{e^{&rsquo;}V^{-1}e}
+$$</p>
+<h3 id="mvf-geometry">MVF geometry</h3>
+<p>A parabola in ($\overline{R}_p, \sigma_p^2$)
+$$
+\sigma_p^2 = \frac{1}{\delta}+ \frac{\delta(\overline{R}_p -\frac{\alpha}{\delta})^2}{\Delta}
+$$</p>
+<!-- raw HTML omitted -->
+<p>!!!   The global minimum ($\frac{\alpha}{\delta}, \frac{1}{\delta}$) in ($\overline{R}_p, \sigma_p^2$)</p>
+<p>$$
+\frac{\sigma_p^2}{\frac{1}{\delta}}-\frac{\overline{R}_p-\frac{\alpha}{\delta}}{\frac{\Delta}{\delta^2}}=1, \sigma_p &gt; 0
+$$</p>
+<!-- raw HTML omitted -->
+<p>The asymptote: $\lim_{\sigma_p \rightarrow \infty}\frac{d  \overline{R}_p}{d \sigma_p}$</p>
+<p>!!! note   Definition: The frontier portfolios with expected return higher(lower) than $\overline{R}_{mv}=\frac{\alpha}{\delta} $ are called efficient(inefficient) frontier portfolios.</p>
+<h3 id="two-fund-theorem">Two Fund Theorem</h3>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/Notes.github.io/posts/courses/quantitative-investment-analysis/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" data-title="Quantitative Investment analysis" data-via="xxxx" data-hashtags="Quantitative"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" data-hashtag="Quantitative"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" data-title="Quantitative Investment analysis"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" data-title="Quantitative Investment analysis"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://dh-zheng.github.io/Notes.github.io/posts/courses/quantitative-investment-analysis/" data-title="Quantitative Investment analysis"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/Notes.github.io/tags/quantitative/">Quantitative</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/Notes.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.102.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/Notes.github.io/" target="_blank">ZHengDH</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"ZhengDH","id-2":"ZhengDH"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/Notes.github.io/js/theme.min.js"></script></body>
+</html>
