@@ -248,7 +248,7 @@ $$
 \overline{R}_p = \omega \overline{R}_A + (1-\omega)\overline{R}_B = \overline{R}_B - \omega (\overline{R}_B - \overline{R}_A)\\
 \sigma_p = [\omega^2 \sigma_A^2 + 2\rho \omega (1-\omega)\sigma_A \sigma_B + (1-\omega)^2 \sigma_B^2]^\frac{1}{2}
 $$
-consider an extreme case $\rho=1, \Longrightarrow =|\omega \sigma_A +(1-\omega_B)|$ <br>
+consider an extreme case $\rho=1, \Longrightarrow \sigma_p=|\omega \sigma_A +(1-\omega \sigma_B)|$ <br>
 We can solve for:
 $$
 \omega = \frac{\sigma_B \pm \sigma_p}{\sigma_B - \sigma_A} \\
@@ -357,7 +357,7 @@ We have</p>
 $$</p>
 <p>The global minimal variance portfolio (GMV): $\sigma_{mv}^2=\frac{1}{\delta}$ with $\overline{R}_{mv} = \frac{\alpha}{\delta}$.</p>
 <p>$$
-\omega_mv = \alpha + b \overline{R}_{mv} = \frac{V^{-1}e}{\delta} = \frac{V^{-1}e}{e^{&rsquo;}V^{-1}e}
+\omega_{mv} = \alpha + b \overline{R}_{mv} = \frac{V^{-1}e}{\delta} = \frac{V^{-1}e}{e^{&rsquo;}V^{-1}e}
 $$</p>
 <p>$\frac{\partial \sigma_p^2}{\partial \overline{R}_p}|_{\overline{R}_{mv}}=0$ (cannot reduce variance by giving up higher expected returns!)</p>
 <p>Find the weight on the GMV portfolio in another way:<br>
@@ -394,6 +394,158 @@ $$
 <p>  Definition: The frontier portfolios with expected return higher(lower) than $\overline{R}_{mv}=\frac{\alpha}{\delta} $ are called efficient(inefficient) frontier portfolios.</p>
 </blockquote>
 <h3 id="two-fund-theorem">Two Fund Theorem</h3>
+<p>Since, <br>
+$$
+\omega^{*} = \lambda V^{-1} \overline{R} + \rho V^{-1}e
+$$</p>
+<blockquote>
+<p>Define a portfolio D with the weight, <br>
+$$
+\omega_D = \frac{V^{-1} \overline{R}}{e^{'} V^{-1} \overline{R}} = \frac{V^{-1} \overline{R}}{\alpha} \enspace (tangency \enspace portfolio)
+$$</p>
+</blockquote>
+<p>Using the expression of $\omega_{mv}$, we can write,
+$$
+\omega^{*} = \lambda V^{-1} \overline{R} + \rho V^{-1} e =\lambda \alpha \omega_{D} + \gamma \delta \omega_{mv}
+$$
+Note taht $\lambda \alpha + \gamma \delta = 1 $</p>
+<blockquote>
+<p>Two Fund Theorem: Any portfolio on the frontier can be viewed as a linear combination of two specific frontier portfolios: the global minimum variance portfolio and the tangency portfolio.</p>
+</blockquote>
+<p>Two-fund separation theorem: If $\overline{R}_{1p}$ and $\overline{R}_{2p}$ are the expected returns on any two distinct frontier portfolios and $\overline{R}_{3p} = x\overline{R}_{1p}+(1-x)\overline{R}_{2p}$, then $\omega_3 = x \omega_1 + (1-x)\omega_2$ is a frontier portfolio.(Proof. can be viewed in the HW)</p>
+<h3 id="decomposition-i">Decomposition I</h3>
+<blockquote>
+<p>Lemma: The GMV portfolio and that on any portfolio (not necessary on the frontier) is always equal to $\sigma_{mv}^2 = \frac{1}{\delta}$</p>
+</blockquote>
+<p><strong>Apply this lemma to a frontier portfolio p $\Longrightarrow$ the return on any frontier portfolio can be decomposed into $R_p = R_{mv}+\epsilon$</strong></p>
+<ul>
+<li>$\epsilon = R_p - R_{mv}$ is an excess return taht is     orthogonal to the return $R_{mv}$, that is $Cov(\epsilon, R_{mv}) =0$</li>
+<li>$\epsilon = b_p R^{*}$ where $R^{*}$ is an unique excess return with $Cov(R^{*}, R_{mv})=0$ (Hansen and Richard, 1987). (Note $E [ R^{*} ] \neq 0$)</li>
+</ul>
+<p>A frontier portfolio return $R_p$ can be decomposed into:
+$$
+Var(R_p) = \underbrace{\frac{1}{\delta}}_{\text{unavoidable risk} = \sigma_{gmv}^2} + b_p^2 Var(R^{*})
+$$</p>
+<h3 id="decomposition-ii">Decomposition II</h3>
+<blockquote>
+<p>Lemma: The covariance of the return on a frontier portfolio q and that on any portfolio p (not on the frontier) with the same expected return as q is always equal to the variance of the frontier portfolio q.</p>
+</blockquote>
+<ul>
+<li>It implies that $R_p = R_q+ \epsilon_p$ where $E[\epsilon]=0$ and $Cov(\epsilon, R_q)=0$. ($\epsilon$ is a pure noise)</li>
+</ul>
+<p>$R_p$ can be decomposed into:
+$$
+R_p = R_{mv} + b_p R_{*} + \epsilon_p
+$$ 
+Where $R^{*}$ is an excess return, $b_p$ is a real number, $Cov(R_{mv}, R^{*})=0, Cov(R_{mv}, \epsilon)=0$, and $Cov(R_{*}, \epsilon)=0$. <br>
+if $\epsilon_p=0$, then $R_p=R_{mv}+b_p R_{*}$ is a frontier portfolio.
+$$
+Var(R_p) = \overbrace{\underbrace{\frac{1}{\delta}}_{\text{unavoidable risk}=\sigma_{gmv}^2} +b_{p}^2Var(R^{*})}^{\text{systematic risk}} + \underbrace{Var(\epsilon_p)}_{\text{idio risk}}
+$$</p>
+<h3 id="zero-covariance-portfolio">Zero covariance portfolio</h3>
+<blockquote>
+<p>Lemma: For any portfolio p on the frontier, except for the GMV, there exists a unique frontier portfolio, denoted by zc(p), which has zero covariance with p.</p>
+</blockquote>
+<p><strong>Proof.</strong>
+Using equation(19),
+$$
+Cov(R_p, R_{ZC}(p))=\frac{1}{\delta}+\frac{\delta}{\Delta}(\overline{R}_p - \frac{\alpha}{\delta})(\overline{R}_{ZC(p)} - \frac{\alpha}{\delta}) = 0
+$$
+Solving for $\overline{R}_{ZC(p)}$, 
+$$
+\overline{R}_{ZC(p)} = \frac{\alpha}{\delta}-\frac{\Delta}{\delta^2(\overline{R}_p - \frac{\alpha}{\delta})} = \overline{R}_{mv} - \frac{\Delta}{\delta^2(\overline{R}_p - \overline{R}_{mv})}
+$$</p>
+<p>$\overline{R}_{ZC(p)}$ is equal to the intercept of the straight line tangent to the minimal variance frontier at $(\overline{R}_{p}, \sigma_p)$.</p>
+<p><figure><a class="lightgallery" href="/Notes.github.io/images/Zero_covariance.jpg" title="Alt" data-thumbnail="/Notes.github.io/images/Zero_covariance.jpg" data-sub-html="<h2>Zero covaiance portfolio</h2><p>Alt</p>">
+        
+    </a><figcaption class="image-caption">Zero covaiance portfolio</figcaption>
+    </figure></p>
+<h3 id="with-a-risk-free-asset">With a risk-free asset</h3>
+<blockquote>
+<p>The riskless asset has the return $R_f$. Ther weight on the riskless asset is $\omega_0$, while the weight on n risky asset is denoted as $\omega$.</p>
+</blockquote>
+<p>The mean-variance portfolio choice problem becomes,
+$$
+\min_{\omega, \omega_{0}} \frac{1}{2}\omega^{&rsquo;} V \omega \\
+st. \enspace e^{&rsquo;}\omega + \omega_{0} = 1 \\
+\omega^{&rsquo;} \overline{R} + \omega_{0} R_f = \overline{R}_p
+$$</p>
+<p>Eliminate the first constraint by substituting $\omega_0 = 1- e^{&rsquo;}\omega$ into the second constraint,
+$$
+\min_{\omega} \frac{1}{2} \omega^{&rsquo;}V\omega \\
+st. \enspace \omega^{&rsquo;}(\overline{R} - R_f e)+R_f = \overline{R}_p
+$$</p>
+<blockquote>
+<p>$\omega$ can be an arbitrage number.</p>
+</blockquote>
+<ul>
+<li>Form the Lagrangian:
+$$
+\min_{\omega, \lambda} L = \frac{1}{2} \omega^{&rsquo;} V \omega + \lambda (\overline{R}_p - \omega^{&rsquo;}(\overline{R} - R_f e) - R_f)
+$$
+FOC w.r.t \omega and the Lagrange multiplier,
+$$
+\frac{\partial L}{\partial \omega} = 0 \Longrightarrow V \omega^{*} = \lambda (\overline{R} - R_f e) \Longrightarrow \omega^{*} = \lambda V^{-1} (\overline{R} - R_f e)
+$$</li>
+</ul>
+<blockquote>
+<p>Only one fund: Tangency portfolio</p>
+</blockquote>
+<ul>
+<li>Using the constraint, $\omega^{&rsquo;}(\overline{R} - R_f e )+ R_f = \overline{R}_p$, we solve $\lambda$,
+$$
+\lambda = \frac{\overline{R}_p - R_f}{\underbrace{(\overline{R} - R_f e)^{&rsquo;} V^{-1} (\overline{R} - R_f e)}_{&gt;0} } = \frac{\overline{R}_p - R_f}{\xi - 2\alpha R_f + \delta R_f^2} \tag{23}
+$$</li>
+</ul>
+<blockquote>
+<p>$V^{-1} &gt; 0 \Longrightarrow$ the denominator of $\lambda &gt;0$, so $\lambda &gt; 0$ iff $\overline{R}_p &gt; R_f$.  When $\lambda &gt;0 $, buy the risky fund.</p>
+</blockquote>
+<ul>
+<li>The variance of the frontier portfolio p is:
+$$
+\sigma_p^2 = \omega^{&rsquo;}V \omega = \lambda^2 (\overline{R} - R_f e)^{&rsquo;} V^{-1}(\overline{R}-R_f e) = \frac{(\overline{R}_p - R_f)^2}{\xi - 2\alpha R_f + \delta R_f^2}
+$$
+Thus now the minimal-variance frontier consists of two straight lines in the mean-standard deviation space.
+$$
+\overline{R}_p = R_f \pm (\xi - 2\alpha R_f + \delta R_f^2)^{\frac{1}{2}} \sigma_p
+$$</li>
+</ul>
+<blockquote>
+<p>The efficient frontier has a positive slope $(\xi - 2\alpha R_f + \delta R_f^2)^{\frac{1}{2}}$. <br>
+The inefficient frontier has a negative slope $-(\xi - 2\alpha R_f + \delta R_f^2)^{\frac{1}{2}}$. <br>
+The intercept of the minimal-variance frontier is $(R_f, 0)$.</p>
+</blockquote>
+<h3 id="one-fund-theorem">One Fund Theorem</h3>
+<blockquote>
+<p>One Fund Theorem Preview: When $R_f \neq R_{mv}$, any portfolio on the minimal-variance frontier can be replicated by the riskless asset and the tangencey portfolio. More precisely, for risky assets, we only need to buy one portfolio.</p>
+</blockquote>
+<ul>
+<li>
+<p>Substituting for $\lambda$ in equation (23):
+$$
+\omega^{*} = \frac{(\overline{R}_p - R_f)V^{-1}(\overline{R} - R_f e)}{(\overline{R} - R_f e)^{&rsquo;}V^{-1}(\overline{R} - R_f e)}
+$$</p>
+<p>We can decompose this portfolio weight into two terms $\omega^{*} = c\tilde{\omega}$, where
+$$
+c = \frac{(\overline{R}_p - R_f)}{(\overline{R}-R_f e)^{&rsquo;} (\overline{R} - R_f e)}
+$$
+Which depending on the targeted expected return. <br>
+and $\tilde{\omega}$ depends on the distribution $(\overline{R}, V)$ of risky asset return only.
+$$
+\tilde{\omega} = V^{-1} (\overline{R} - R_f e)
+$$</p>
+</li>
+<li>
+<p>Normalize $\tilde{\omega}$:
+$$
+\omega_D \equiv \frac{\tilde{\omega}}{e^{&rsquo;}\tilde{\omega}} \equiv \frac{V^{-1}(\overline{R}-R_f e)}{e^{&rsquo;}V^{-1}(\overline{R}-R_f e)}
+$$</p>
+</li>
+</ul>
+<blockquote>
+<p>We will see that $\omega_D$ is the so-called tangency portfolio with the intercept ($R_f, 0$).<br>
+The fraction of wealth invested on the tangencey portfolio is determined by the targeted expexcted return $\overline{R}_p$, Which in turn depends on the investor&rsquo;s risk preferneces.</p>
+</blockquote>
 ]]></description>
 </item>
 </channel>
